@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercises</title>
+    </head>
+    <style>
+    .commentArea {
+        font: 14px Arial;
+        padding: 0 10px;
+        margin-top: 20px;    
+    }
+
+    .bubbledLeft,.bubbledRight {
+        margin-top: 20px;
+        padding: 5px 9px;
+        max-width: 50%;
+        clear: both;
+        position: relative;
+    }
+
+    .bubbledLeft{
+        float: left;
+        margin-right: auto;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #D3D3D3;
+        color: #000000;
+    }
+
+    .bubbledLeft:before {
+        position: absolute;
+        bottom: 0;
+        left: -8px;
+        content: "";
+    } 
+
+
+    .bubbledRight{
+        float: right;
+        margin-left: auto;
+        text-align: right;
+        border-radius: 8px 8px 8px 8px;
+        background-color: #07D;
+        color: white;
+    }
+
+    .bubbledRight:before {
+        position: absolute;
+        bottom: 0;
+        right: -8px;
+        content: "";
+    }
+
+    .bottom {
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        
+        
+    }
+    </style>
+    <body>
+        <div class="commentArea">
+            <div class="bubbledLeft">
+                We are going on vacation for a week
+            </div>
+            <div class="bubbledRight">
+                Okay mom. Have fun!
+            </div>
+            <div class="bubbledLeft">
+                Don’t open the door if someone knocks.. always be careful of strangers.
+            </div>
+            <div class="bubbledRight">
+                I will don’t worry!
+            </div>
+        </div>    
+        <div class="bottom">
+            Few hours later... <br><br>
+            At 10:59 PM <br><br><br><br><br>
+           <h2><a href= "">I hear a sound</a></h2> 
+        </div>
+      
+    </body>
+</html>
