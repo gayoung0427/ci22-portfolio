@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Garden</title>
+    </head>
+    <style>
+        body {
+        background-color:#d2f8d2;
+        }
+
+        .title {
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 1.5rem;
+            color: #0e5d0e;
+        }
+
+        .explain {
+            text-align: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            color: #0e5d0e;
+        }
+
+        .flower1 {
+            position: relative;
+            display: flex; 
+        }
+
+        .petal1 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 120px;
+            margin-left: 100px;  
+            transform: rotate(-10deg);
+        }
+
+        .petal2 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 80px;
+            margin-left: 175px;  
+            transform: rotate(45deg);
+        }
+
+        .petal3 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 120px;
+            margin-left: 250px;  
+            transform: rotate(100deg);
+        }
+
+        .petal4 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 205px;
+            margin-left: 250px;  
+            transform: rotate(155deg);
+        }
+
+        .petal5 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 250px;
+            margin-left: 175px;  
+            transform: rotate(225deg);
+        }
+
+        .petal6 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 210px;
+            margin-left: 100px;  
+            transform: rotate(285deg);
+        }
+
+        .circle {
+            height: 90px;
+            width: 90px;
+            background-color: #FFFACD;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 175px;
+            margin-left: 190px;
+        }
+
+
+        .flower3 {
+            position: relative;
+            display: flex;  
+        }
+
+        .petal13 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: px;
+            margin-left: 750px;  
+            transform: rotate(-10deg);
+        }
+
+        .petal14 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: -17px;
+            margin-left: 783px;  
+            transform: rotate(45deg);
+        }
+
+        .petal15 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 0px;
+            margin-left: 816px;  
+            transform: rotate(100deg);
+        }
+
+        .petal16 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 817px;  
+            transform: rotate(165deg);
+        }
+
+        .petal17 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 58px;
+            margin-left: 783px;  
+            transform: rotate(225deg);
+        }
+
+        .petal18 {
+            height: 50px;
+            width: 50px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 750px;  
+            transform: rotate(285deg);
+        }
+
+        .circle3 {
+            height: 30px;
+            width: 30px;
+            background-color: #FFFACD;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 31px;
+            margin-left: 793px;
+        }
+
+        .flower2 {
+            position: relative;
+            display: flex;  
+        }
+
+        .petal7 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 250px;
+            margin-left: 500px;  
+            transform: rotate(-10deg);
+        }
+
+        .petal8 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 210px;
+            margin-left: 580px;  
+            transform: rotate(45deg);
+        }
+
+        .petal9 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 250px;
+            margin-left: 660px;  
+            transform: rotate(100deg);
+        }
+
+        .petal10 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 347px;
+            margin-left: 663px;  
+            transform: rotate(165deg);
+        }
+
+        .petal11 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 390px;
+            margin-left: 580px;  
+            transform: rotate(225deg);
+        }
+
+        .petal12 {
+            height: 120px;
+            width: 120px;
+            background-color: #555;
+            border-radius:0 100% 0 100%;
+            position: absolute;
+            margin-top: 345px;
+            margin-left: 500px;  
+            transform: rotate(285deg);
+        }
+
+        .circle2 {
+            height: 90px;
+            width: 90px;
+            background-color: #FFFACD;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 1;
+            margin-top: 315px;
+            margin-left: 595px;
+        }
+
+        .petals :hover{
+            background-color: #ffcccb;
+            transition: ease-out 0.3s;
+            cursor: grab;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .petals2 :hover{
+            background-color: #C3B1E1;
+            transition: ease-out 0.3s;
+            cursor: grab;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .flower3 :hover{
+            background-color: lightblue;
+            transition: ease-out 0.3s;
+            cursor: grab;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+        
+         
+
+        
+
+    </style>
+
+    <body>
+        <div class="title">
+            <p>Garden</p>
+        </div>
+        <div class="explain">
+            <p>(Hover the petals!)</p>
+        </div>
+
+        <div class="flower1">
+            <div class="circle"></div>
+            <div class="petals">
+                <div class="petal1"></div>
+                <div class="petal2"></div>
+                <div class="petal3"></div>
+                <div class="petal4"></div>
+                <div class="petal5"></div>
+                <div class="petal6"></div>
+            </div>
+        </div>        
+
+        <div class="flower2">
+            <div class="circle2"></div>
+            <div class="petals2">
+                <div class="petal7"></div>
+                <div class="petal8"></div>
+                <div class="petal9"></div>
+                <div class="petal10"></div>
+                <div class="petal11"></div>
+                <div class="petal12"></div>
+            </div>
+        </div>
+
+        <div class="flower3">
+            <div class="circle3"></div>
+            <div class="petals3">
+                <div class="petal13"></div>
+                <div class="petal14"></div>
+                <div class="petal15"></div>
+                <div class="petal16"></div>
+                <div class="petal17"></div>
+                <div class="petal18"></div>
+            </div>
+        </div>
+
+
+
+
+    </body>
+</html>
