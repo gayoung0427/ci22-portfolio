@@ -1,0 +1,31 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+}
+
+section {
+    border: 10px;
+}
+
+.container {
+    color: white;
+    border: 10px;
+    max-width: 550px;
+    margin: 20px auto;
+    background-color: #f08080;
+    padding: 1px 5px;
+    border-radius: 50px;
+}
+
+.container:hover {
+    font-size: 0;
+}
+
+.container:hover:after{
+    content: attr(data-hover);
+    font-size: 17px;
+    margin: 20px auto;
+    line-height: 30px;
+    
+}
+
