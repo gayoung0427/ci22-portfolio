@@ -20,6 +20,7 @@ section {
 
 .container:hover {
     font-size: 0;
+    transition-duration: 1.5s;
 }
 
 .container:hover:after{
@@ -31,3 +32,18 @@ section {
     margin: 10px 20px;
 }
 
+.containerlist {
+    font-size: 24px;
+    line-height: 0.9;
+    color: black;
+    border: 10px;
+    max-width: 550px;
+    margin: 20px auto;
+    background-color: #f08080;
+    padding: 23px 5px;
+    border-radius: 50px;
+}
+
+.korean {
+    line-height: 1.8;
+}
