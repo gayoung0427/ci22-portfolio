@@ -1,7 +1,16 @@
 body {
+    background-image: url(https://sase.org/wp-content/uploads/2018/06/The-New-School.jpg);
+    background-size: 150%;
     font-family: 'Comfortaa', cursive;
     text-align: center;
     background-color: black;
+}
+
+
+
+.responsive {
+    width: 100%;
+    height: auto;
 }
 
 section {
@@ -46,4 +55,16 @@ section {
 
 .korean {
     line-height: 1.8;
+}
+
+.containerlist2 {
+    font-size: 24px;
+    line-height: 2;
+    color: black;
+    border: 10px;
+    max-width: 550px;
+    margin: 20px auto;
+    background-color: #f08080;
+    padding: 11px 5px;
+    border-radius: 50px;
 }
