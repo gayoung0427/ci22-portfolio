@@ -1,0 +1,52 @@
+html {
+    cursor: url("images/hand.png"), auto;
+}
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 3rem;
+    color: black;
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.titleunderline {
+    text-decoration: none;
+    color: inherit;
+    cursor: url("images/pencil.png"), auto;
+}
+
+.titleunderline {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  position: relative;
+}
+
+.titleunderline::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    background-color: red;
+    transition: width 0.25s ease-out;
+}
+
+.titleunderline:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+.titleunderline:hover {
+    background-color: #ffe4e3;
+}
