@@ -8,14 +8,71 @@ html {
 }
 
 body{
-    font-size: 3rem;
+    font-family: test-geograph-medium;
+    font-size: 2.5rem;
     color: black;
     padding: 1rem;
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.movingtext{
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: -450px;
+}
+
+.movingtext span {
+    font-size: 4rem;
+    display: inline-block;
+    position: relative;
+    left: 100%;
+    transform: translateX(100%);
+    animation: scrolling 11s linear infinite;
+}
+
+.movingtext span:nth-child(1) {
+    animation-delay: 0s;
+}
+.movingtext span:nth-child(2) {
+    animation-delay: 1s;
+}
+.movingtext span:nth-child(3) {
+    animation-delay: 2s;
+}
+.movingtext span:nth-child(4) {
+    animation-delay: 3s;
+}
+.movingtext span:nth-child(5) {
+    animation-delay: 4s;
+}
+.movingtext span:nth-child(6) {
+    animation-delay: 5s;
+}
+.movingtext span:nth-child(7) {
+    animation-delay: 6s;
+}
+.movingtext span:nth-child(8) {
+    animation-delay: 7s;
+}
+.movingtext span:nth-child(9) {
+    animation-delay: 8s;
+}
+
+
+@keyframes scrolling {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100%
+    }
 }
 
 a.titleunderline {
@@ -49,4 +106,74 @@ a.titleunderline {
 
 .titleunderline:hover {
     background-color: #ffe4e3;
+}
+
+.movingtext2{
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 450px;
+}
+
+.movingtext2 span {
+    font-size: 4rem;
+    display: inline-block;
+    position: relative;
+    left: 100%;
+    transform: translateX(100%);
+    animation: scrolling2 11s linear infinite;
+}
+
+.movingtext2 span:nth-child(1) {
+    animation-delay: 8s;
+}
+.movingtext2 span:nth-child(2) {
+    animation-delay: 7s;
+}
+.movingtext2 span:nth-child(3) {
+    animation-delay: 6s;
+}
+.movingtext2 span:nth-child(4) {
+    animation-delay: 5s;
+}
+.movingtext2 span:nth-child(5) {
+    animation-delay: 4s;
+}
+.movingtext2 span:nth-child(6) {
+    animation-delay: 3s;
+}
+.movingtext2 span:nth-child(7) {
+    animation-delay: 2s;
+}
+.movingtext2 span:nth-child(8) {
+    animation-delay: 1s;
+}
+.movingtext2 span:nth-child(9) {
+    animation-delay: 0s;
+}
+
+
+@keyframes scrolling2 {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 720px) {
+    .titleunderline {
+        font-size: 1.5rem;
+    }
+    .movingtext span, .movingtext2 span {
+        font-size: 2.5rem;
+    }
+}
+
+@font-face {
+    font-family: test-geograph-medium;
+    src: url(fonts/test-geograph-medium.woff2);
 }
