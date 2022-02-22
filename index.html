@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Interaction Lab Spring 2022</title>
     </head>
     <style>
       body {
         text-align: center;
+        font-family: test-soehne-breit;
       }
 
       ul {
         text-align: center;
         display:inline;
         list-style: none;
+        line-height: 2rem;
       }
 
       a{
         text-decoration: none;
       }
+
+      .title {
+        font-size: 60px;
+      }
+
+    details, summary{
+      list-style: none;
+      line-height: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 45px;
+      line-height: 2rem;
+    }
+    
+    .part4 {
+      font-size: 12px;
+      display: flexbox;
+      padding: 0.5rem;
+    }
+
+    @font-face {
+    font-family: test-soehne-breit;
+    src: url(p2/fonts/test-soehne-breit-buch.woff2);
+}
     </style>
     <body>
-        <h1>Interaction Studio and Lab</h1>
+        <h1 class="title">Interaction Studio and Lab</h1>
         <hr>
-        <h2>Studio</h2>
+        <h1 class="subtitle">Studio</h1>
         <details>
-           <summary>Projects</summary>
+           <summary><h2>Projects</h2></summary>
            <ul>
               <li>
                 <a href="p1/index.html">P1: Cross-Platform Storytelling</a>
@@ -43,6 +72,15 @@
                   <a href="p2/homepage.html">
                     Part 3
                   </a>
+                  <details>
+                    <summary>Part 4</summary>
+                    <a href="p2/part4/1.html" class="part4">Draft 1</a>
+                    <a href="p2/part4/2.html" class="part4">Draft 2</a>
+                    <a href="p2/part4/3.html" class="part4">Draft 3</a>
+                    <a href="p2/part4/4.html" class="part4">Draft 4</a>
+                    <a href="p2/part4/5.html" class="part4">Draft 5</a>
+                  </details>
+
               </details> 
             </ul>
 
@@ -50,7 +88,7 @@
         </details>
       
         <details>
-          <summary>Exerecises</summary>
+          <summary><h2>Exerecises</h2></summary>
           <ul>
             <li>
               <a href="exercises/example.html">Screen Time</a>
@@ -59,9 +97,9 @@
         </details>
         <br>
         <hr>
-        <h2>Lab</h2>
+        <h2 class="subtitle">Lab</h2>
         <details>
-          <summary>Assignments</summary>
+          <summary><h2>Assignments</h2></summary>
           <ul>
               <li>
                 <a href="a1/index.html">A1: Semantics are everything</a>

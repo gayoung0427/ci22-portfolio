@@ -8,7 +8,7 @@ html {
 }
 
 body{
-    font-family: test-geograph-medium;
+    font-family: geograph;
     font-size: 2.5rem;
     color: black;
     padding: 1rem;
@@ -169,11 +169,11 @@ a.titleunderline {
         font-size: 1.5rem;
     }
     .movingtext span, .movingtext2 span {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 }
 
 @font-face {
-    font-family: test-geograph-medium;
+    font-family: geograph;
     src: url(fonts/test-geograph-medium.woff2);
 }
