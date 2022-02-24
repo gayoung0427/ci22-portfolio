@@ -1,0 +1,48 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    body:hover {
+        color: rgb(255, 147, 147);
+    }
+}
+@media screen and (max-width: 768px) {
+    body:hover {
+        color: rgb(255, 253, 147);
+    }
+}
+@media screen and (max-width: 600px) {
+    body:hover {
+        color: rgb(172, 255, 147);
+    }
+}
+@media screen and (max-width: 480px) {
+    body:hover {
+        color: rgb(147, 221, 255);
+    }
+}
+@media screen and (max-width: 320px) {
+    body:hover {
+        color: rgb(255, 147, 250);
+    }
+}

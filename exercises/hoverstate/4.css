@@ -1,0 +1,62 @@
+@font-face {
+    font-family: soehne;
+    src: url(fonts/test-soehne-breit-buch.woff2);
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-family: soehne;
+    font-size: 4rem;
+    text-align: center;
+    transition:  1.5s ease;
+}
+
+@media screen and (max-width: 1024px) {
+    h1:hover {
+        font-size: 3rem;
+        transform: rotate(180deg);
+    }
+}
+@media screen and (max-width: 768px) {
+    h1:hover {
+        font-size: 4rem;
+        transform: none;
+        filter: blur(1.5rem);
+    }
+}
+@media screen and (max-width: 600px) {
+    h1:hover {
+        font-size: 3rem;
+        transform: rotate(90deg);
+        filter: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    h1:hover {
+        font-size: 3rem;
+        transform: rotate(-45deg);
+    }
+}
+@media screen and (max-width: 320px) {
+    h1:hover {
+        font-size: 2rem;
+        transform: rotate(-360deg);
+    }
+}
