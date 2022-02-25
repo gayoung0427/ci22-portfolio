@@ -1,35 +1,38 @@
+@font-face {
+    font-family: soehne;
+    src: url(fonts/test-soehne-breit-buch.woff2);
+}
+
 body {
     background-image: url(https://sase.org/wp-content/uploads/2018/06/The-New-School.jpg);
-    background-size: 150%;
+    background-size: auto;
     font-family: 'Comfortaa', cursive;
     text-align: center;
     background-color: black;
+    height: 100%;
 }
-
-
 
 .responsive {
     width: 100%;
     height: auto;
 }
 
-section {
-    border: 10px;
-}
 
 .container {
+    font-family: soehne;
     color: black;
     border: 10px;
-    max-width: 550px;
+    max-width: 65%;
     margin: 20px auto;
-    background-color: #f08080;
+    background-color: #ffc1c1;
     padding: 1px 5px;
     border-radius: 50px;
 }
 
 .container:hover {
+    color: rgb(255, 255, 255);
     font-size: 0;
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .container:hover:after{
@@ -42,15 +45,20 @@ section {
 }
 
 .containerlist {
+    font-family: soehne;
     font-size: 24px;
-    line-height: 0.9;
+    line-height: 2;
     color: black;
     border: 10px;
-    max-width: 550px;
+    max-width: 65%;
     margin: 20px auto;
-    background-color: #f08080;
-    padding: 23px 5px;
+    background-color: #ffc1c1;
+    padding: 11px 5px;
     border-radius: 50px;
+}
+
+summary {
+    list-style: none;
 }
 
 .korean {
@@ -58,13 +66,35 @@ section {
 }
 
 .containerlist2 {
+    font-family: soehne;
     font-size: 24px;
     line-height: 2;
     color: black;
     border: 10px;
-    max-width: 550px;
+    max-width: 65%;
     margin: 20px auto;
-    background-color: #f08080;
+    background-color: #ffc1c1;
     padding: 11px 5px;
     border-radius: 50px;
+}
+
+li{
+    margin: 0px;
+    padding: 10px;
+}
+
+.containerlist:hover, .containerlist2:hover {
+    color: white;
+    transition-duration: 1s;
+}
+
+@media screen and (max-width: 720px) {
+    .container, .containerlist, .containerlist2 {
+        max-width: 70%;
+        line-height: auto;
+    }
+    h1, summary, ul {
+        font-size: 15px;
+        text-align: center;
+    }
 }
