@@ -1,6 +1,6 @@
 @font-face {
-    font-family: geograph;
-    src: url(fonts/test-geograph-medium.woff2)
+    font-family: enduro;
+    src: url(fonts/enduroweb-medium-TRIAL.woff)
 }
 
 * {
@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-    font-family: geograph;
+    font-family: enduro;
 }
 
 .container {

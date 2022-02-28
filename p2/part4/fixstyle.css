@@ -1,6 +1,6 @@
 @font-face {
-    font-family: geograph;
-    src: url(fonts/test-geograph-medium.woff2);
+    font-family: enduro;
+    src: url(fonts/enduroweb-medium-TRIAL.woff);
 }
 
 * {
@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-    font-family: geograph;
+    font-family: enduro;
 }
 
 .container {
@@ -79,28 +79,49 @@ body {
     line-height: 4.5rem;  
 }
 
-span {
+label {
     display: inline-block;
     position: relative;
-  }
-  
-span::before {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 0;
-      height: 6px;
-      background-color: red;
-      transition: width 0.25s ease-out;
-  }
-  
-span:hover::before {
-      width: 100%;
-      left: 0;
-      right: auto;
+    background-color: none;
   }
 
-span:hover {
-      background-color: #ffe4e3;
+label.underline::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background-color: red;
+    transition: width 0.5s ease-out;
   }
+
+label.underline::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 6px;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s ease-out;
+   }
+
+label.underline:hover {
+    background-color: #ffe4e3;
+} 
+
+label:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+label:hover::after {
+    height: 0px;
+}
+
+label {
+   z-index: 2;
+}
