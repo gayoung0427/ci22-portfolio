@@ -1,0 +1,182 @@
+@font-face {
+    font-family: whyte;
+    src: url(fonts/ABCWhyteInktrap-Regular-Trial.woff2);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: whyte;
+}
+
+.container {
+    display: flex;
+    align-items: center; 
+}
+
+.button1 {
+    text-decoration: none;
+    padding: 15px 23px;
+    font-size: 2rem;
+    position: relative;
+    margin: 30px 30px 0px 30px;
+    background: rgb(112, 219, 112);
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    transition: transfrom 0.3s ease;
+}
+
+.button1::after, .button1::before {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+    background: rgb(112, 219, 112);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.7s ease;
+}
+
+.button1:hover {
+    transform: translate(-12px, -12px);
+    color: white;
+    transition: transform 0.7s ease;
+}
+
+.button1:hover::after {
+    transform: translate(6px, 6px);
+}
+
+.button1:hover::before {
+    transform: translate(12px, 12px);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    text-align: center;
+    margin: 50px;
+    line-height: 7rem;
+}
+
+.bodytext {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    font-size: 2.5rem;
+    line-height: 4.5rem;  
+}
+
+label {
+    display: inline-block;
+    position: relative;
+    background-color: none;
+  }
+
+label.underline::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    background-color: red;
+    transition: width 0.5s ease-out;
+  }
+
+label.underline::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 6px;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s ease-out;
+   }
+
+label.underline:hover {
+    background-color: #ffe4e3;
+} 
+
+label:hover::before {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+label:hover::after {
+    height: 0px;
+}
+
+label {
+   z-index: 2;
+}
+
+@media screen and (max-width: 720px) {
+    .button1 {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .title {
+        font-size: 2.7rem;
+        line-height: 3rem;
+        margin: 20px;
+    }
+
+    .bodytext {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    label.underline::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 3.5px;
+        background-color: red;
+        transition: width 0.5s ease-out;
+    }
+
+    label.underline::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 3.5px;
+        background: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.5s ease-out;
+    }
+
+    label.underline:hover {
+        background-color: #ffe4e3;
+    } 
+    
+    label:hover::before {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+    
+    label:hover::after {
+        height: 0px;
+    }
+}
