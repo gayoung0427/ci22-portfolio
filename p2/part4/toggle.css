@@ -1,0 +1,16 @@
+#t1 {
+    position: relative;
+  }
+#t1-checkbox {
+    display: none;
+  }
+#t1-checkbox:checked + #t1:after {
+    content: "these, people";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: white;
+  }

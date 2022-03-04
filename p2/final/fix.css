@@ -103,7 +103,7 @@ html, body {
 #credit {
     border-top: 2.5px solid rgb(112, 219, 112);
     margin-top: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     width: auto;
     font-size: 1.5rem;
     justify-content: center;
@@ -122,6 +122,7 @@ label {
     position: relative;
     background-color: none;
     border-radius: 10px 10px 0px 0px;
+    z-index: 2;
   }
 
 label.underline::before {
@@ -159,10 +160,6 @@ label:hover::before {
 
 label:hover::after {
     height: 0px;
-}
-
-label {
-   z-index: 2;
 }
 
 @media screen and (max-width: 850px) {

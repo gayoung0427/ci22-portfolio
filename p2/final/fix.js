@@ -4,3 +4,4 @@ function change(element, text) {
     element.innerHTML=inside;
     element.classList.remove("underline");
  }
+
