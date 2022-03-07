@@ -37,11 +37,8 @@ html, body {
     align-items: center; 
     position: -webkit-sticky;
     position: sticky;
-    top: 10px;
+    top: 0;
     z-index: -10;
-    transition-delay: 10s;
-    transition-property: position;
-    transition-duration: 3s;
 }
 
 .button1 {
