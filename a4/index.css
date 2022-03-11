@@ -18,13 +18,14 @@ html,body {
 
 #imageOne {
     width: 30%;
+    position: relative;
+    top: -15%;
+    left: 0;
     transition: ease 0.3s;
 }
 
 #imageOne:hover {
     width: 35%;
-    top: 0;
-    left: 0;
     transition: ease 0.3s;
 }
 
@@ -54,21 +55,22 @@ html,body {
 }
 
 #imagefour {
-    width: 30%;
+    width: 20%;
     position: fixed;
-    bottom: 0;
+    bottom: 10%;
+    right: 20%;
     transition: ease 0.3s;
 }
 
 #imagefour:hover {
-    width: 33%;
+    width: 23%;
     transition: ease 0.3s;
 }
 
 #imagefive {
     width: 30%;
     position: fixed;
-    left: 0;
+    left: 20%;
     bottom: 0;
     transition: ease 0.3s;
 }
@@ -77,3 +79,15 @@ html,body {
     width: 33%;
     transition: ease 0.3s;
 }
+  
+ @font-face {
+    font-family: whyte;
+    src: url(fonts/ABCWhyteInktrap-Medium-Trial.woff2);
+}
+
+  body{
+    font-family: whyte;
+    font-size: 20px;
+  }
+
+ 
