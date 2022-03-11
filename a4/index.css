@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    background: rgb(125,253,255);
+    background: radial-gradient(circle, rgba(125,253,255,1) 0%, rgba(180,255,151,1) 47%, rgba(255,223,154,1) 100%);
+}
+
+.flower {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=88966), auto;
+}
+
+.flower:hover {
+    transition: ease 0.3s;
+}
+
+#imageOne {
+    width: 30%;
+    transition: ease 0.3s;
+}
+
+#imageOne:hover {
+    width: 35%;
+    top: 0;
+    left: 0;
+    transition: ease 0.3s;
+}
+
+#imagetwo {
+    width: 10%;
+    position: fixed;
+    margin: 5%;
+    top: 0;
+    transition: ease 0.3s;
+}
+
+#imagetwo:hover {
+    width: 15%;
+    transition: ease 0.3s;
+}
+
+#imagethree {
+    width: 25%;
+    position: fixed;
+    right: 0;
+    transition: ease 0.3s;
+}
+
+#imagethree:hover {
+    width: 27%;
+    transition: ease 0.3s;
+}
+
+#imagefour {
+    width: 30%;
+    position: fixed;
+    bottom: 0;
+    transition: ease 0.3s;
+}
+
+#imagefour:hover {
+    width: 33%;
+    transition: ease 0.3s;
+}
+
+#imagefive {
+    width: 30%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    transition: ease 0.3s;
+}
+
+#imagefive:hover {
+    width: 33%;
+    transition: ease 0.3s;
+}
