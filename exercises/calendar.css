@@ -1,34 +1,67 @@
-html, body {
-    height: 100%;
-  }
+
+@font-face {
+    font-family: soehne;
+    src: url(fonts/test-soehne-breit-buch.woff2);
+}
+
+html {
+    background-color: rgb(175, 139, 223);
+}
 
 .calendar {
+    width: 1000px;
+    height: 100px;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+.month {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: soehne;
+    font-size: 50px;
+}
+
+.week_flex {
+    margin: auto;
     display: flex;
+    flex-wrap: none;
+    flex-direction: row;
+    align-items: center;
+}
+
+.week {
+    display: flex;
+    width: 136px;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    text-align: center;
+    font-family: soehne;
+    font-size: 15px;
+    justify-content: center;
 }
 
 .day {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-size: 20px;
-}
-
-.date {
-    display: flex;
-    flex-wrap: wrap;
     margin: 20px;
-    position: absolute;
     width:100%;
+    height: 100px;
+    margin: auto;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    font-family: soehne;
+    text-align: left;
 }
 
 .d {
     justify-content: space-around;
-    margin: 8px;
+    margin: 13px;
+    padding: 8px;
     border: 2px black;
-    border: 2px solid red;
-    height: 80px;
-    width: 80px;
+    border: 2px dotted rgb(255, 255, 255);
+    height: 90px;
+    width: 90px;
 }
