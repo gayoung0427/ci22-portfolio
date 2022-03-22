@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E4 Sounds</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond" rel="stylesheet">
+    <style>
+      body{
+        width: 100%;
+        height: 100vh;
+        margin: 10vw;
+        overflow: hidden;
+      }
+
+      #button1 {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 50px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+    #button1:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+    #button1:active {
+	position:relative;
+	top:1px;
+}
+
+
+#image1 {
+  width: 20vw;
+  position: absolute;
+  top: 50%;
+  left: 50vw;
+  padding: 10vw;
+}
+
+#image1:hover {
+  opacity: 60%;
+}
+
+#image1:active {
+  width: 30vw;
+  opacity: 100%;
+}
+
+#image2 {
+  width: 60vw;
+}
+
+#image2:hover {
+  opacity: 60%;
+}
+
+    </style>
+</head>
+      <body>
+        
+
+<script>
+  function play1() {
+    var audio = document.getElementById("audio1");
+    audio.play();
+  }
+
+  function play2() {
+    var audio = document.getElementById("audio2");
+    audio.play();
+  }
+
+  function play3() {
+    var audio = document.getElementById("audio3");
+    audio.play();
+  }
+
+</script>
+
+<input type="button" value="Nioce" onclick="play1()" id="button1">
+<audio id="audio1" src="assets/nioce.mp3"></audio>
+
+<section><img src="assets/game_over_PNG58.png" onclick="play2()" id="image1"></section>
+<audio id="audio2" src="assets/mixkit-arcade-retro-game-over-213.wav"></audio>
+
+<section><img src="assets/princessphoto.png" onclick="play3()" id="image2"></section>
+<audio id="audio3" src="assets/princessaudio.wav"></audio>
+
+    </html>
