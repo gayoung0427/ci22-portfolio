@@ -2,22 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="filter.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="filter.css">
+    <title>Filter</title>
 </head>
 <body>
-    <ol id="controls">
-        <li><a href="#" id="web">Web</a></li>
-        <li><a href="#" id="canvas">Canvas</a></li>
-        <li><a href="#" id="print">Print</a></li>
-        <li><a href="#" id="all">All</a></li>
-    </ol>
-    <div id="gallery">
-        <img src="http://davidrhysthomas.co.uk/img/dexter.png" class="web" />
-        <img src="http://davidrhysthomas.co.uk/img/mandark.png" class="canvas" />
-        <img src="http://davidrhysthomas.co.uk/img/drPooh2.png" class="print" />
-    </div>
+    <section>
+        <h1>Coffee</h1>
+        <ul>
+            <li class="active">All</li>
+            <li>Dunkin</li>
+            <li>Starbucks</li>
+            <li>McDonald's</li>
+        </ul>
+
+        <div class="product">
+            <img src="assets/dunkin1.png" data-filter="dunkin">
+            <img src="assets/dunkin2.png" data-filter="dunkin">
+            <img src="assets/dunkin3.png" data-filter="dunkin">
+            <img src="assets/dunkin4.png" data-filter="dunkin">
+            <img src="assets/starbucks1.jpg" data-filter="starbucks">
+            <img src="assets/starbucks2.jpg" data-filter="starbucks">
+            <img src="assets/starbucks3.jpeg" data-filter="starbucks">
+            <img src="assets/starbucks4.jpeg" data-filter="starbucks">
+            <img src="assets/mcdonalds1.jpeg" data-filter="mcdonald's">
+            <img src="assets/mcdonalds2.jpeg" data-filter="mcdonald's">
+            <img src="assets/mcdonalds3.jpeg" data-filter="mcdonald's">
+            <img src="assets/mcdonalds4.jpeg" data-filter="mcdonald's">
+        </div>
+    </section>
+
+    <script>
+        const liItem = document.querySelectorAll('ul li');
+        const imgItem = document.querySelectorAll('.product img');
+
+        liItem.forEach(li => {
+           li.onclick = function() {
+            //active
+            liItem.forEach(li => {
+                li.className = "";
+            })
+            li.className = "active";
+
+            //Filter
+            const value = li.textContent;
+            imgItem.forEach(img => {
+                img.style.display = 'none';
+                if (img.getAttribute('data-filter') == value.toLowerCase() || value == "All") {
+                    img.style.display = 'block';
+                }
+            })
+           }
+        });
+    </script>
 </body>
 </html>
