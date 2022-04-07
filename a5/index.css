@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body{
+    background-image: url(image/macOSBigSur.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#footer {
+    background-color: rgb(206, 206, 206);
+    display: block;
+    position: absolute;
+    height: 80px;
+    width: 90%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px;
+    opacity: 70%;
+}
+
+.chrome {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 0.5vh;
+    left: 90px;
+}
+
+.photoshop {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 170px;
+}
+
+.illustrator {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 247px;
+}
+
+.message {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 0.3vh;
+    left: 323px;
+}
+
+.finder {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 403px;
+}
+
+.zoom {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 480px;
+}
+
