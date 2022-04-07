@@ -8,6 +8,11 @@ html,body {
     min-height: 100vh;
 }
 
+@font-face {
+    font-family: geograph;
+    src: url(fonts/enduroweb-medium-TRIAL.woff);
+}
+
 body{
     background-image: url(image/macOSBigSur.jpeg);
     background-size: cover;
@@ -76,6 +81,14 @@ body{
     left: 480px;
 }
 
+.notes {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 555px;
+}
+
 .wrapper {
   height: 100vh;
   display: flex;
@@ -91,10 +104,12 @@ body{
   border-radius: 20px;
   text-transform: uppercase;
   color: #ff0000;
-  font-family: 'Roboto', sans-serif;
+  font-family: geograph;
+  font-size: 18px;
 }
 
 .modal {
+  font-family: geograph;
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -130,4 +145,5 @@ body{
   color: #585858;
   text-decoration: none;
 }
+
 

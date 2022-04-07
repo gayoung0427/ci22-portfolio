@@ -7,29 +7,42 @@
     <title>Last Page of Internet</title>
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
+    
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper" onclick="clicked(this)">
         <a href="#demo-modal">Important Message</a>
     </div>
     <div id="demo-modal" class="modal">
         <div class="modal__content">
-            <h1>CSS Only Modal</h1>
-    
+            <h1>The Last Goodbye</h1>
             <p>
-                You can use the :target pseudo-class to create a modals with Zero JavaScript. Enjoy!
+                <br>
+                Today we're announcing that Internet world will be COMPLETELY shutting down 
+                starting on April 8. 
+                <br>
+                <br>
+                We are sorry for any inconvenience. 
+                <br>
+                <br>
+                To close the internet, have a goodbye time with your computer last minute.
+                <br>
+                <br>
+                <b>Click on each app to say goodbye.</b> See you in a next world user!
             </p>
-    
             <a href="#" class="modal__close">&times;</a>
         </div>
     </div>
 
     <footer id="footer"></footer>
-    <img src="image/Chrome.png" class="chrome">
-    <img src="image/Adobe_Photoshop_CC_icon.svg.png" class="photoshop">
-    <img src="image/Adobe_Illustrator_CC_icon.svg.png" class="illustrator">
-    <img src="image/message.png" class="message">
-    <img src="image/finder.png" class="finder">
-    <img src="image/zoom.png" class="zoom">
+    <img src="image/Chrome.png" class="chrome" id="chrome" onclick="clicked(this)">
+    <img src="image/Adobe_Photoshop_CC_icon.svg.png" class="photoshop" id="photoshop" onclick="clicked(this)">
+    <img src="image/Adobe_Illustrator_CC_icon.svg.png" class="illustrator" id="illustrator" onclick="clicked(this)">
+    <img src="image/message.png" class="message" id="message" onclick="clicked(this)">
+    <img src="image/finder.png" class="finder" id="finder" onclick="clicked(this)">
+    <img src="image/zoom.png" class="zoom" id="zoom" onclick="clicked(this)">
+    <img src="image/notes.png" class="notes" id="notes" onclick="clicked(this)">
+
+
 </body>
 </html>
