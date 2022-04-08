@@ -19,12 +19,16 @@ body{
     background-attachment: fixed;
 }
 
+b{
+    color: #ff0000;
+}
+
 #footer {
     background-color: rgb(206, 206, 206);
     display: block;
     position: absolute;
     height: 80px;
-    width: 90%;
+    width: 70%;
     left: 0;
     bottom: 0;
     right: 0;
@@ -38,7 +42,7 @@ body{
     height: 70px;
     position: absolute;
     bottom: 0.5vh;
-    left: 90px;
+    left: 290px;
 }
 
 .photoshop {
@@ -46,7 +50,7 @@ body{
     height: 66px;
     position: absolute;
     bottom: 0.7vh;
-    left: 170px;
+    left: 370px;
 }
 
 .illustrator {
@@ -54,7 +58,7 @@ body{
     height: 66px;
     position: absolute;
     bottom: 0.7vh;
-    left: 247px;
+    left: 447px;
 }
 
 .message {
@@ -62,7 +66,7 @@ body{
     height: 70px;
     position: absolute;
     bottom: 0.3vh;
-    left: 323px;
+    left: 523px;
 }
 
 .finder {
@@ -70,7 +74,7 @@ body{
     height: 66px;
     position: absolute;
     bottom: 0.7vh;
-    left: 403px;
+    left: 603px;
 }
 
 .zoom {
@@ -78,7 +82,7 @@ body{
     height: 66px;
     position: absolute;
     bottom: 0.7vh;
-    left: 480px;
+    left: 680px;
 }
 
 .notes {
@@ -86,7 +90,93 @@ body{
     height: 66px;
     position: absolute;
     bottom: 0.7vh;
-    left: 555px;
+    left: 755px;
+}
+
+.vs {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    bottom: 0.1vh;
+    left: 825px;
+}
+
+.indesign {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 905px;
+}
+
+.facetime {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    bottom: 0.7vh;
+    left: 980px;
+}
+
+.spotify {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    bottom: 0.1vh;
+    left: 1050px;
+}
+
+.hd {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 80px;
+    left: 1250px;
+}
+
+.pdf {
+    width: 60px;
+    height: 80px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 400px;
+    left: 1150px;
+}
+
+.jpeg {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 80px;
+    left: 150px;
+}
+
+.mp3 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 380px;
+    left: 90px;
+}
+
+.css {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 300px;
+    left: 290px;
+}
+
+.folder {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 0.1vh;
+    top: 80px;
+    left: 1050px;
 }
 
 .wrapper {
@@ -146,4 +236,10 @@ body{
   text-decoration: none;
 }
 
-
+.btn {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
