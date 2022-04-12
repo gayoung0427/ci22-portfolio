@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    min-height: 100vh;
+    font-family: abc;
+}
+
+@font-face {
+    font-family: abc;
+    src: url(fonts/ABCWhyteInktrap-Medium-Trial.woff2);
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+}
+
+hr.dashed {
+    border-top: 10px dashed rgb(0, 0, 0);
+  }
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    display: block;
+    margin: 30px 0px 0px 0px;
+}
+
+a:link {
+    color: none;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(136, 57, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: rgb(189, 131, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+video {
+    position: relative;
+    display: block;
+    margin: auto;
+}
