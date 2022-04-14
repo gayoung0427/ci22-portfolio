@@ -46,15 +46,14 @@
       }
 
       .block {
-        padding: var(--margin);
-        background-color: white;
+        background-color: none;
       }
     </style>
   </head>
 
   <body>
     <button class="randombtn">
-      <span class="button_top"> City</span>
+      <span class="button_top"> Insect</span>
   </button>
     <div class="wrapper">
       <h1>This is the contents of my channel, <span id="channel-title"></span>.</h1>
@@ -103,7 +102,6 @@
         }
         });
         
-
       const renderTitle = (data) => {
         let title = data['title'];
         document.getElementById('channel-title').innerText = title;
@@ -130,8 +128,10 @@
       const renderImage = (block) => {
         let imageUrl = block['image']['display']['url'];
         let imageBlockTemplate = document.getElementById('image-block');
+        let insectImg = document.querySelector('img');
         let clone = imageBlockTemplate.content.cloneNode(true);
-
+        // console.log(insectImg);
+        // insectImg.src = imageUrl;
         clone.querySelector('img').src = imageUrl;
 
         document.getElementById('contents').appendChild(clone);
