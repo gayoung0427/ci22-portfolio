@@ -53,6 +53,9 @@
   </head>
 
   <body>
+    <button class="randombtn">
+      <span class="button_top"> City</span>
+  </button>
     <div class="wrapper">
       <h1>This is the contents of my channel, <span id="channel-title"></span>.</h1>
 
@@ -80,18 +83,26 @@
     </template>
 
     <script>
+      let randInt = 70;
+      randombtn = document.querySelector(".randombtn");
+      randombtn.addEventListener("click", newNumb);
+     // setInterval(function(){console.log(randInt)},1000);
       window.addEventListener('DOMContentLoaded', () => {
         const channel = 'insects-5_bu9j6ugpc';
-
-        fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
+        setInterval(apicall,1000);
+        function apicall(){
+          fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
-            //console.log(data);
-            renderTitle(data);
-            renderBlocks(data);
+           // console.log(data);
+            //console.log(data['contents']);
+            //renderTitle(data);
+           renderBlocks(data);
+            //setInterval(function(){console.log(randInt)},1000);
           });
+        }
+        });
         
-      });
 
       const renderTitle = (data) => {
         let title = data['title'];
@@ -100,13 +111,21 @@
 
       const renderBlocks = (data) => {
         let blocks = data['contents'];
-        blocks.forEach((block) => {
-          let blockClass = block['class'];
-          if(blockClass == 'Image') {
-            renderImage(block);
-          }
-        });
+        //console.log("print");
+        //blocks.forEach((block) => {
+          //let blockClass = block['class'];
+          //if(blockClass == 'Image') {
+         //   renderImage(block);
+        //  }
+       // });
+       //let randInt = Math.floor(Math.random() * 100);
+       console.log(blocks[randInt]);
+       renderImage(blocks[randInt]);
       };
+
+      function newNumb(){
+        randInt = Math.floor(Math.random() * 100);
+      }
 
       const renderImage = (block) => {
         let imageUrl = block['image']['display']['url'];

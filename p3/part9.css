@@ -8,7 +8,7 @@ html,body {
     min-height: 100vh;
 }
 
-.snail {
+.snailimg {
     position: absolute;
     width: 70%;
     height: 100%;
@@ -28,7 +28,7 @@ html,body {
     font-size: 25px;
 }
 
-.insect {
+.insectmenu {
     position: fixed;
     left: 87%;
     top: 2%;
@@ -42,61 +42,61 @@ html,body {
     font-size: 17px;
 }
 
-.btn2 {
+.stickbug {
     position: fixed;
-    left: 92%;
+    left: 92.9%;
     top: 12%;
 }
 
-.btn3 {
+.spider {
     position: fixed;
     left: 94.2%;
     top: 20%;
 }
 
-.btn4 {
+.moth {
     position: fixed;
     left: 94.9%;
     top: 28%;
 }
 
-.btn5 {
+.beetle {
     position: fixed;
     left: 94.3%;
     top: 36%;
 }
 
-.btn6 {
+.caterpillar {
     position: fixed;
     left: 92.5%;
     top: 44%;
 }
 
-.btn7 {
+.butterfly {
     position: fixed;
     left: 93.3%;
     top: 52%;
 }
 
-.btn8 {
+.grasshopper {
     position: fixed;
     left: 91.4%;
     top: 60%;
 }
 
-.btn9 {
+.worm {
     position: fixed;
     left: 94.4%;
     top: 68%;
 }
 
-.btn10 {
+.dragonfly {
     position: fixed;
     left: 92.8%;
     top: 76%;
 }
 
-.btn11 {
+.snail {
     position: fixed;
     left: 94.8%;
     top: 84%;
