@@ -85,21 +85,22 @@
       let randInt = 70;
       randombtn = document.querySelector(".randombtn");
       randombtn.addEventListener("click", newNumb);
-     // setInterval(function(){console.log(randInt)},1000);
+      let blocks = [];
+
       window.addEventListener('DOMContentLoaded', () => {
         const channel = 'insects-5_bu9j6ugpc';
-        setInterval(apicall,1000);
-        function apicall(){
+        // setInterval(apicall,1000);
+        // function apicall(){
           fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
            // console.log(data);
             //console.log(data['contents']);
             //renderTitle(data);
-           renderBlocks(data);
-            //setInterval(function(){console.log(randInt)},1000);
+          //  renderBlocks(data);
+            blocks = data['contents'];
           });
-        }
+        // }
         });
         
       const renderTitle = (data) => {
@@ -122,7 +123,11 @@
       };
 
       function newNumb(){
-        randInt = Math.floor(Math.random() * 100);
+        randInt = Math.floor(Math.random() * blocks.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(blocks[randInt]);
       }
 
       const renderImage = (block) => {
@@ -130,6 +135,15 @@
         let imageBlockTemplate = document.getElementById('image-block');
         let insectImg = document.querySelector('img');
         let clone = imageBlockTemplate.content.cloneNode(true);
+
+        let title = block['title'];
+        console.log(title);
+        let properties = title.split(',');
+        // properties[0] is the section
+        // properties[1] is the size
+        if (properties[1] == 'small') {
+          
+        }
         // console.log(insectImg);
         // insectImg.src = imageUrl;
         clone.querySelector('img').src = imageUrl;
