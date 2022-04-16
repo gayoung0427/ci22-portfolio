@@ -32,9 +32,9 @@
       }
       
       #contents {
-        display: grid;
+        /* display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        grid-gap: var(--margin);
+        grid-gap: var(--margin); */
         align-items: start;
         justify-items: start;
         padding: 0;
@@ -48,13 +48,19 @@
       .block {
         background-color: none;
       }
+
     </style>
   </head>
 
   <body>
     <button class="randombtn">
-      <span class="button_top"> Insect</span>
+      <span class="button_top">Insect</span>
   </button>
+
+  <button class="randombeetle">
+    <span class="button_top">Beetle</span>
+</button>
+
     <div class="wrapper">
       <h1>This is the contents of my channel, <span id="channel-title"></span>.</h1>
 
@@ -63,28 +69,18 @@
       </ul>
     </div>
 
-    <template id="text-block">
-      <li class="block block--text">
-        <p class="block__text"></p>
-      </li>
-    </template>
-
     <template id="image-block">
       <li class="block block--image">
         <img class="block__image" src="">
       </li>
     </template>
 
-    <template id="link-block">
-      <li class="block block--link">
-        <a class="block__link" href="#"></a>
-      </li>
-    </template>
-
     <script>
-      let randInt = 70;
+      let randInt = 100;//was at 70
       randombtn = document.querySelector(".randombtn");
       randombtn.addEventListener("click", newNumb);
+      let beetleBtn = document.querySelector(".randomBeetle");
+      beetleBtn.addEventListener("click",showBeetle);
       let blocks = [];
 
       window.addEventListener('DOMContentLoaded', () => {
@@ -95,7 +91,7 @@
           .then(response => response.json())
           .then(data => {
            // console.log(data);
-            //console.log(data['contents']);
+            console.log(data['contents']);
             //renderTitle(data);
           //  renderBlocks(data);
             blocks = data['contents'];
@@ -150,6 +146,18 @@
 
         document.getElementById('contents').appendChild(clone);
       };
+
+
+      function showBeetle(block){
+        let beetleRange = blocks.slice(89,99);
+        randInt = Math.floor(Math.random() * beetleRange.length);
+        let title = block['title'];
+        let imageBlockTemplate = document.getElementById('image-block');
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(beetleRange[randInt]);
+      }
     </script>
   </body>
 </html>
