@@ -151,8 +151,6 @@
       function showBeetle(block){
         let beetleRange = blocks.slice(89,99);
         randInt = Math.floor(Math.random() * beetleRange.length);
-        let title = block['title'];
-        let imageBlockTemplate = document.getElementById('image-block');
         if(document.querySelector('li')) {
           document.querySelector('li').remove();
         }
