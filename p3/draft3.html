@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 10</title>
+    <link rel="stylesheet" href="draft3.css">
+    <script src="draft3.js"></script>
+</head>
+<body>
+    <div id='backgroundimg'></div>
+    
+    <button class="randombtn">
+        <span class="button_top2">Insect</span>
+    </button>
+
+    <ul id="contents">
+    
+    </ul>
+    
+    <template id="image-block">
+        <li class="block block--image">
+        <img class="block__image" src="">
+        </li>
+    </template>
+    
+    <button class="dropdown_insect" onclick="dropdown()">
+        <span class="button_top2" >⬇</span>
+    </button>
+
+    <div id="insectlists" style="display:none">
+        <button class="insect stickbug">
+            <span class="button_top">Stick Bug</span>
+        </button>
+        <button class="insect spider">
+            <span class="button_top">Spider</span>
+        </button>
+        <button class="insect moth">
+            <span class="button_top">Moth</span>
+        </button>
+        <button class="insect beetle">
+            <span class="button_top">Beetle</span>
+        </button>
+        <button class="insect caterpillar">
+            <span class="button_top">Caterpillar</span>
+        </button>
+        <button class="insect butterfly">
+            <span class="button_top">Butterfly</span>
+        </button>
+        <button class="insect grasshopper">
+            <span class="button_top">Grasshopper</span>
+        </button>
+        <button class="insect worm">
+            <span class="button_top">Worm</span>
+        </button>
+        <button class="insect dragonfly">
+            <span class="button_top">Dragonfly</span>
+        </button>
+        <button class="insect snail">
+            <span class="button_top">Snail</span>
+        </button>
+    </div>
+
+        <button class="btn">
+            <a href="#demo-modal" class="button_top2">?</a>
+        </button>
+    <div id="demo-modal" class="modal">
+        <div class="modal__content">
+            <h1>Collection of Insects</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis tempora nesciunt maxime quasi sed voluptates autem nam, cum ipsa dolore possimus ullam magni amet laborum vero iusto consequatur omnis doloribus.
+            </p>
+            <a href="#" class="modal__close">&times;</a>
+        </div>
+    </div>
+
+<script>
+    let randInt = 100;//was at 70
+      randombtn = document.querySelector(".randombtn");
+      randombtn.addEventListener("click", newNumb);
+      let beetleBtn = document.querySelector(".randomBeetle");
+     // beetleBtn.addEventListener("click",showBeetle);
+      let blocks = [];
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const channel = 'insects-5_bu9j6ugpc';
+        // setInterval(apicall,1000);
+        // function apicall(){
+          fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
+          .then(response => response.json())
+          .then(data => {
+           // console.log(data);
+            console.log(data['contents']);
+            //renderTitle(data);
+          //  renderBlocks(data);
+            blocks = data['contents'];
+          });
+        // }
+        });
+        
+      const renderTitle = (data) => {
+        let title = data['title'];
+        document.getElementById('channel-title').innerText = title;
+      };
+
+      const renderBlocks = (data) => {
+        let blocks = data['contents'];
+        //console.log("print");
+        //blocks.forEach((block) => {
+          //let blockClass = block['class'];
+          //if(blockClass == 'Image') {
+         //   renderImage(block);
+        //  }
+       // });
+       //let randInt = Math.floor(Math.random() * 100);
+       console.log(blocks[randInt]);
+       renderImage(blocks[randInt]);
+      };
+
+      function newNumb(){
+        randInt = Math.floor(Math.random() * blocks.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(blocks[randInt]);
+      }
+
+      const renderImage = (block) => {
+        let imageUrl = block['image']['display']['url'];
+        let imageBlockTemplate = document.getElementById('image-block');
+        let insectImg = document.querySelector('img');
+        let clone = imageBlockTemplate.content.cloneNode(true);
+
+        let title = block['title'];
+        console.log(title);
+        let properties = title.split(',');
+        // properties[0] is the section
+        // properties[1] is the size
+        if (properties[1] == 'small') {
+          
+        }
+        // console.log(insectImg);
+        // insectImg.src = imageUrl;
+        clone.querySelector('img').src = imageUrl;
+
+        document.getElementById('contents').appendChild(clone);
+      };
+
+
+      function showBeetle(block){
+        let beetleRange = blocks.slice(89,99);
+        randInt = Math.floor(Math.random() * beetleRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(beetleRange[randInt]);
+      }
+</script>
+</body>
+</html>
