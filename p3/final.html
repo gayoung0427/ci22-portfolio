@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Part 10</title>
-    <link rel="stylesheet" href="draft3.css">
-    <script src="draft3.js"></script>
+    <title>Collection of Insect</title>
+    <link rel="stylesheet" href="final.css">
+    <script src="final.js"></script>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -32,10 +32,10 @@
     </button>
 
     <div id="insectlists" style="display:none">
-        <button class="insect stickbug">
+        <button class="insect randomstickbug">
             <span class="button_top">Stick Bug</span>
         </button>
-        <button class="insect spider">
+        <button class="insect randomspider">
             <span class="button_top">Spider</span>
         </button>
         <button class="insect moth">
@@ -83,6 +83,10 @@
       randombtn.addEventListener("click", newNumb);
       let beetleBtn = document.querySelector(".randombeetle");
       beetleBtn.addEventListener("click",showBeetle);
+      let stickbugBtn = document.querySelector(".randomstickbug");
+      stickbugBtn.addEventListener("click",showStickbug);
+      let spiderBtn = document.querySelector(".randomspider");
+      spiderBtn.addEventListener("click",showSpider);
       
       let blocks = [];
 
@@ -143,7 +147,6 @@
         document.getElementById('contents').appendChild(clone);
       };
 
-
       function showBeetle(block){
         let beetleRange = blocks.slice(89,99);
         randInt = Math.floor(Math.random() * beetleRange.length);
@@ -151,6 +154,24 @@
           document.querySelector('li').remove();
         }
         renderImage(beetleRange[randInt]);
+      }
+
+      function showStickbug(block){
+        let stickbugRange = blocks.slice(69,78);
+        randInt = Math.floor(Math.random() * stickbugRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(stickbugRange[randInt]);
+      }
+
+      function showSpider(block){
+        let spiderRange = blocks.slice(59,68);
+        randInt = Math.floor(Math.random() * spiderRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(spiderRange[randInt]);
       }
 </script>
 </body>
