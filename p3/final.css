@@ -40,8 +40,9 @@ h1 {
   }
 
   img {
-    height:800px;
-    width: 1000px;
+    height: 100vh;
+    width: auto;
+    /*object-fit: contain;*/
   }
 
   .block {
@@ -54,6 +55,9 @@ h1 {
     height: 100%;
     background-image: url(images/city1.jpeg);
     z-index: -1;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .randombtn {
@@ -82,7 +86,7 @@ h1 {
     top: 20%;
 }
 
-.moth {
+.randommoth {
     position: fixed;
     left: 94.9%;
     top: 28%;
@@ -94,37 +98,37 @@ h1 {
     top: 36%;
 }
 
-.caterpillar {
+.randomcaterpillar {
     position: fixed;
     left: 92.5%;
     top: 44%;
 }
 
-.butterfly {
+.randombutterfly {
     position: fixed;
     left: 93.3%;
     top: 52%;
 }
 
-.grasshopper {
+.randomgrasshopper {
     position: fixed;
     left: 91.4%;
     top: 60%;
 }
 
-.worm {
+.randomworm {
     position: fixed;
     left: 94.4%;
     top: 68%;
 }
 
-.dragonfly {
+.randomdragonfly {
     position: fixed;
     left: 92.8%;
     top: 76%;
 }
 
-.snail {
+.randomsnail {
     position: fixed;
     left: 94.8%;
     top: 84%;

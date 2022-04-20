@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collection of Insect</title>
     <link rel="stylesheet" href="final.css">
-    <script src="final.js"></script>
+    <!-- <script src="final.js"></script> -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div id='backgroundimg'></div>
+    <img id='backgroundimg'></img>
     
     <button class="randombtn">
         <span class="button_top2">Insect</span>
@@ -38,28 +38,28 @@
         <button class="insect randomspider">
             <span class="button_top">Spider</span>
         </button>
-        <button class="insect moth">
+        <button class="insect randommoth">
             <span class="button_top">Moth</span>
         </button>
         <button class="insect randombeetle">
             <span class="button_top">Beetle</span>
         </button>
-        <button class="insect caterpillar">
+        <button class="insect randomcaterpillar">
             <span class="button_top">Caterpillar</span>
         </button>
-        <button class="insect butterfly">
+        <button class="insect randombutterfly">
             <span class="button_top">Butterfly</span>
         </button>
-        <button class="insect grasshopper">
+        <button class="insect randomgrasshopper">
             <span class="button_top">Grasshopper</span>
         </button>
-        <button class="insect worm">
+        <button class="insect randomworm">
             <span class="button_top">Worm</span>
         </button>
-        <button class="insect dragonfly">
+        <button class="insect randomdragonfly">
             <span class="button_top">Dragonfly</span>
         </button>
-        <button class="insect snail">
+        <button class="insect randomsnail">
             <span class="button_top">Snail</span>
         </button>
     </div>
@@ -97,14 +97,28 @@
       stickbugBtn.addEventListener("click",showStickbug);
       let spiderBtn = document.querySelector(".randomspider");
       spiderBtn.addEventListener("click",showSpider);
-      
+      let mothBtn = document.querySelector(".randommoth");
+      mothBtn.addEventListener("click",showMoth);
+      let caterpillarBtn = document.querySelector(".randomcaterpillar");
+      caterpillarBtn.addEventListener("click",showCaterpillar);
+      let butterflyBtn = document.querySelector(".randombutterfly");
+      butterflyBtn.addEventListener("click",showButterfly);
+      let grasshopperBtn = document.querySelector(".randomgrasshopper");
+      grasshopperBtn.addEventListener("click",showGrasshopper);
+      let wormBtn = document.querySelector(".randomworm");
+      wormBtn.addEventListener("click",showWorm);
+      let dragonflyBtn = document.querySelector(".randomdragonfly");
+      dragonflyBtn.addEventListener("click",showDragonfly);
+      let snailBtn = document.querySelector(".randomsnail");
+      snailBtn.addEventListener("click",showSnail);
+
       let blocks = [];
 
       window.addEventListener('DOMContentLoaded', () => {
         const channel = 'insects-5_bu9j6ugpc';
         // setInterval(apicall,1000);
         // function apicall(){
-          fetch(`https://api.are.na/v2/channels/${channel}?per=100`, {cache: 'no-store'})
+          fetch(`https://api.are.na/v2/channels/${channel}?per=98`, {cache: 'no-store'})
           .then(response => response.json())
           .then(data => {
            // console.log(data);
@@ -138,21 +152,19 @@
 
       const renderImage = (block) => {
         let imageUrl = block['image']['display']['url'];
+        let imgdescription = block['description'];
         let imageBlockTemplate = document.getElementById('image-block');
         let insectImg = document.querySelector('img');
         let clone = imageBlockTemplate.content.cloneNode(true);
 
         let title = block['title'];
         console.log(title);
-        let properties = title.split(',');
-        // properties[0] is the section
-        // properties[1] is the size
-        // if (properties[1] == 'left') {
-        //     document.querySelector('img').style.float = "right";
-        // }
-        // console.log(insectImg);
-        // insectImg.src = imageUrl;
+
         clone.querySelector('img').src = imageUrl;
+
+        if (imgdescription == "right") {
+            clone.querySelector('img').style.float = "right";
+        }
 
         document.getElementById('contents').appendChild(clone);
       };
@@ -183,6 +195,70 @@
         }
         renderImage(spiderRange[randInt]);
       }
+
+      function showMoth(block){
+        let mothRange = blocks.slice(50,58);
+        randInt = Math.floor(Math.random() * mothRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(mothRange[randInt]);
+      }
+
+      function showCaterpillar(block){
+        let caterpillarRange = blocks.slice(39,49);
+        randInt = Math.floor(Math.random() * caterpillarRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(caterpillarRange[randInt]);
+      }
+
+      function showButterfly(block){
+        let butterflyRange = blocks.slice(79,88);
+        randInt = Math.floor(Math.random() * butterflyRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(butterflyRange[randInt]);
+      }
+
+      function showGrasshopper(block){
+        let grasshopperRange = blocks.slice(29,38);
+        randInt = Math.floor(Math.random() * grasshopperRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(grasshopperRange[randInt]);
+      }
+
+      function showWorm(block){
+        let wormRange = blocks.slice(19,28);
+        randInt = Math.floor(Math.random() * wormRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(wormRange[randInt]);
+      }
+
+      function showDragonfly(block){
+        let dragonflyRange = blocks.slice(0,9);
+        randInt = Math.floor(Math.random() * dragonflyRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(dragonflyRange[randInt]);
+      }
+
+      function showSnail(block){
+        let snailRange = blocks.slice(10,18);
+        randInt = Math.floor(Math.random() * snailRange.length);
+        if(document.querySelector('li')) {
+          document.querySelector('li').remove();
+        }
+        renderImage(snailRange[randInt]);
+      }
 </script>
+<script src="final.js"></script>
 </body>
 </html>
