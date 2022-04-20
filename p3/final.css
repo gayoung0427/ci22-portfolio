@@ -18,6 +18,18 @@ span, button {
     z-index: 1;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+.highlight {
+    font-size: 23px;
+}
+
+.credit {
+    font-size: 12px;
+}
+
 #contents {
     /* display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -162,7 +174,7 @@ span, button {
   .modal__close {
     position: absolute;
     font-size: 40px;
-    top: 15px;
+    top: 20px;
     right: 30px;
     color: rgb(40, 118, 40);
     text-decoration: none;
