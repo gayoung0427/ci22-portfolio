@@ -9,22 +9,48 @@
         .block {
             visibility: hidden;
             display: inline;
+            position: absolute;
         }
 
         .block.active {
             visibility: visible;
         }
+
+        * {
+            padding: 0;
+            margin: 0; 
+            overflow: hidden;
+        }
+        .popup {
+            display: inline-block; 
+            padding: 20px 20px; 
+            background: white; 
+            color: black; 
+            border-radius: 30px; 
+            border: 5px solid black;
+            font-family: sans-serif; 
+            margin: 30vh 38vw; 
+            cursor: pointer;
+            text-align: center; 
+        }
+
+        .red:hover {
+            color: red;
+        }
     </style>
 </head>
-<body>
+<div class="popup" onclick="this.outerHTML='';">
+    <h4>Press any alphabet to create a shape!</h4>
+    <br><p class="red"><b>OK</b></p>
+</div>
 
     <template id="a">
-        <div class="block active">
+        <div id="random" class="block active">
             <img src="images/graph (1).png" width="100" height="100">
         </div>
     </template>
     <template id="b">
-        <div class="block active">
+        <div id="random"class="block active">
             <img src="images/graph (2).png" width="100" height="100">
         </div>
     </template>
@@ -157,7 +183,35 @@
         let currentLetterTemplate = document.querySelector(`#${currentLetter}`);
         let clone = currentLetterTemplate.content.cloneNode(true);
         document.body.appendChild(clone);
+
+     //   collect all the divs
+var divs = document.getElementsByTagName('div');
+// get window width and height
+var winWidth = window.innerWidth;
+var winHeight = window.innerHeight;
+
+// i stands for "index". you could also call this banana or haircut. it's a variable
+for ( var i=0; i < divs.length; i++ ) {
+ 	
+    // shortcut! the current div in the list
+    var thisDiv = divs[i];
+    
+    // get random numbers for each element
+    randomTop = getRandomNumber(0, winHeight);
+    randomLeft = getRandomNumber(0, winWidth);
+    
+    // update top and left position
+    thisDiv.style.top = randomTop +"px";
+    thisDiv.style.left = randomLeft +"px";
+}
+// function that returns a random number between a min and max
+function getRandomNumber(min, max) {
+    
+  return Math.random() * (max - min) + min;
+    
+}
     })
+
 </script>
 </body>
 </html>
