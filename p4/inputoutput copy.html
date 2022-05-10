@@ -21,7 +21,6 @@
             margin: 0; 
             overflow: hidden;
         }
-
         .popup {
             display: inline-block; 
             padding: 20px 20px; 
@@ -38,66 +37,12 @@
         .red:hover {
             color: red;
         }
-
-        .title {
-            font-family: sans-serif;
-            position: absolute;
-            display: block;
-            font-size: 30px;
-            top: 5%;
-            left: 39%;
-            margin-right: -50%;
-            z-index: 5;
-        }
-
-        .refresh {
-            position: fixed;
-            left: 2%;
-            top: 90%;
-        }
-
-        .download {
-            position: fixed;
-            left: 94%;
-            top: 90%;
-        }
-
-        button {
-            border: none;
-            background-color: white;
-            cursor: pointer;
-            z-index: 5;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            }
     </style>
 </head>
-<body>
-
-<canvas id="capture"></canvas>
 <div class="popup" onclick="this.outerHTML='';">
     <h4>Press any alphabet to create a shape!</h4>
     <br><p class="red"><b>OK</b></p>
 </div>
-
-    <h1 class="title">How are you feeling?</h1>
-
-  
-    <button class="refresh" onclick="refreshPage()">
-        <img src="images/refresh.png" width="50" height="50">
-    </button>
-
-    <button class="download" id="download">
-        <img src="images/download.jpeg" width="50" height="50">
-    </button>
 
     <template id="a">
         <div id="random" class="block active">
@@ -231,58 +176,27 @@
     </template>
 
 
-<script src="html2canvas.min.js"></script>
+
 <script>
     document.addEventListener('keydown', (event) => {
         let currentLetter = event.key;
         let currentLetterTemplate = document.querySelector(`#${currentLetter}`);
         let clone = currentLetterTemplate.content.cloneNode(true);
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+        var divs = document.getElementsByTagName('div');
+        randomTop = getRandomNumber(0, winHeight);
+        randomLeft = getRandomNumber(0, winWidth);
+        divs.style.top = randomTop +"px";
+        divs.style.left = randomLeft +"px";
         document.body.appendChild(clone);
 
-     //   collect all the divs
-var divs = document.getElementsByTagName('div');
-// get window width and height
-var winWidth = window.innerWidth;
-var winHeight = window.innerHeight;
-
-// i stands for "index". you could also call this banana or haircut. it's a variable
-for ( var i=0; i < divs.length; i++ ) {
- 	
-    // shortcut! the current div in the list
-    var thisDiv = divs[i];
-    
-    // get random numbers for each element
-    randomTop = getRandomNumber(-20, winHeight);
-    randomLeft = getRandomNumber(-20, winWidth);
-    
-    // update top and left position
-    thisDiv.style.top = randomTop +"px";
-    thisDiv.style.left = randomLeft +"px";
-}
-// function that returns a random number between a min and max
 function getRandomNumber(min, max) {
     
   return Math.random() * (max - min) + min;
     
 }
     })
-
-    function refreshPage() {
-  window.location.href = window.location.href;
-}
-
-document.getElementById("download").onclick = function() {
-    const screenshotTarget = document.getElementById("capture");
-
-    html2canvas(screenshotTarget).then((canvas) => {
-        const base64image = canvas.toDataURL("image/png");
-        var anchor = document.createElement('a');
-        anchor.setAttribute("href", base64image);
-        anchor.setAttribute("download", "my-image.png");
-        anchor.click();
-        anchor.remove();
-    });
-};
 
 </script>
 </body>
