@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/graph (14).png" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Make Art</title>
     <style>
+        @font-face {
+            font-family: soehne;
+            src: url(fonts/test-soehne-breit-buch.woff2);
+        }
         .block {
             visibility: hidden;
             display: inline;
@@ -21,7 +27,6 @@
             margin: 0; 
             overflow: hidden;
         }
-
         .popup {
             display: inline-block; 
             padding: 20px 20px; 
@@ -30,9 +35,10 @@
             border-radius: 30px; 
             border: 5px solid black;
             font-family: sans-serif; 
-            margin: 30vh 38vw; 
+            margin: 40vh 40vw; 
             cursor: pointer;
             text-align: center; 
+            font-family: soehne;
         }
 
         .red:hover {
@@ -43,23 +49,24 @@
             font-family: sans-serif;
             position: absolute;
             display: block;
-            font-size: 30px;
+            font-size: 50px;
             top: 5%;
-            left: 39%;
+            left: 33%;
             margin-right: -50%;
             z-index: 5;
+            font-family: soehne;
         }
 
         .refresh {
             position: fixed;
-            left: 2%;
-            top: 90%;
+            left: 1%;
+            top: 88%;
         }
 
         .download {
             position: fixed;
             left: 94%;
-            top: 90%;
+            top: 88%;
         }
 
         button {
@@ -72,19 +79,69 @@
         canvas.block.active {
             z-index: 5;
             }
+
+            @media screen and (max-width: 620px) {
+                .title {
+                    position: absolute;
+                    display: block;
+                    font-size: 35px;
+                    top: 5%;
+                    left: 14%;
+                    margin-right: -50%;
+                }
+
+                .refresh {
+                    position: fixed;
+                    left: 2%;
+                    top: 92%;
+                }
+
+                .download {
+                    position: fixed;
+                    left: 89%;
+                    top: 92%;
+                }
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .popup {
+                    display: inline-block; 
+                    padding: 12px 12px; 
+                    background: white; 
+                    color: black; 
+                    border-radius: 30px; 
+                    border: 4px solid black;
+                    margin: 40vh 17vw; 
+                    cursor: pointer;
+                    text-align: center; 
+                    font-family: soehne;
+                    font-size: 15px;
+                }
+            }
+
+
     </style>
 </head>
-<body>
-
-
 <div class="popup" onclick="this.outerHTML='';">
-    <h4>Press any letter to create a shape!</h4>
+    <h4>Press any alphabet to create a shape!</h4>
     <br><p class="red"><b>OK</b></p>
 </div>
+    <div id="printDiv">
+        <h1 class="title">How are you feeling?</h1>
 
+        <button class="refresh" onclick="refreshPage()">
+            <img src="images/refresh.png" width="70" height="70">
+        </button>
+    
+        <button class="download" id="print-button" onclick="printThisPage">
+            <img src="images/download.jpeg" width="70" height="70">
+        </button>
+    
 
-
-    <canvas id="canvas" height="800px" width="1000px">
+    
     <template id="a">
         <div id="random" class="block active">
             <img src="images/graph (1).png" width="100" height="100">
@@ -215,7 +272,7 @@
             <img src="images/graph (26).png" width="100" height="100">
         </div>
     </template>
-</canvas>
+</div>
 
 <script src="html2canvas.min.js"></script>
 <script>
@@ -223,29 +280,18 @@
         let currentLetter = event.key;
         let currentLetterTemplate = document.querySelector(`#${currentLetter}`);
         let clone = currentLetterTemplate.content.cloneNode(true);
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+        randomTop = getRandomNumber(-30, winHeight);
+        randomLeft = getRandomNumber(-30, winWidth);
+        
+        // use .querySelector on the document fragment to access its inner html
+        // console.log(clone.querySelector('div'))
+        clone.querySelector('div').style.top = randomTop +"px";
+        clone.querySelector('div').style.left = randomLeft +"px";
+
         document.body.appendChild(clone);
 
-     //   collect all the divs
-var divs = document.getElementsByTagName('div');
-// get window width and height
-var winWidth = window.innerWidth;
-var winHeight = window.innerHeight;
-
-// i stands for "index". you could also call this banana or haircut. it's a variable
-for ( var i=0; i < divs.length; i++ ) {
- 	
-    // shortcut! the current div in the list
-    var thisDiv = divs[i];
-    
-    // get random numbers for each element
-    randomTop = getRandomNumber(-20, winHeight);
-    randomLeft = getRandomNumber(-20, winWidth);
-    
-    // update top and left position
-    thisDiv.style.top = randomTop +"px";
-    thisDiv.style.left = randomLeft +"px";
-}
-// function that returns a random number between a min and max
 function getRandomNumber(min, max) {
     
   return Math.random() * (max - min) + min;
@@ -257,18 +303,13 @@ function getRandomNumber(min, max) {
   window.location.href = window.location.href;
 }
 
-document.getElementById("download").onclick = function() {
-    const screenshotTarget = document.getElementById("capture");
+var printer = document.getElementById("print-button");
 
-    html2canvas(screenshotTarget).then((canvas) => {
-        const base64image = canvas.toDataURL("image/png");
-        var anchor = document.createElement('a');
-        anchor.setAttribute("href", base64image);
-        anchor.setAttribute("download", "my-image.png");
-        anchor.click();
-        anchor.remove();
-    });
-};
+function printPage() {
+  window.print();
+}
+
+printer.addEventListener("click", printPage);
 
 </script>
 </body>
